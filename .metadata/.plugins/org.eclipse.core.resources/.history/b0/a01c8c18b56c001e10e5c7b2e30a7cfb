@@ -1,0 +1,44 @@
+package com.kh.oraclesample;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class workbookem {
+	
+	static String Driver;
+	static String url;
+	static String user;
+	static String password;
+	static Connection con;
+	
+	static void dbconnect() {
+		Driver = "oracle.jdbc.driver.OracleDrive";
+		url = "jdbc:oracle:thin:@localhost:1521:xe";
+		user = "workbook";
+		password = "workbook";
+		
+		con = null;
+		
+		try {
+			con = DriverManager.getConnection(url, user, password);
+			
+			System.out.println(con);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public static void main(String[] args) {
+		
+		dbconnect();
+		studentInfo();
+	}
+	
+	static void studentInfo() {
+		System.out.println();
+	}
+	
+
+}

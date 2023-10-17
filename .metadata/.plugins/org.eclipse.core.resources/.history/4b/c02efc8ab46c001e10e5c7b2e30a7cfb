@@ -1,0 +1,31 @@
+package com.kh.oraclesample;
+
+import java.sql.Connection;
+
+public class workbookem {
+	
+	String Driver;
+	String url;
+	String user;
+	String password;
+	Connection con;
+	
+	public void dbconnect() {
+		Driver = "oracle.jdbc.driver.OracleDrive";
+		url = "jdbc:oracle:thin:@localhost:1521:xe";
+		user = "workbook";
+		password = "workbook";
+		
+		con = null;
+	}
+	
+	public static void main(String[] args) {
+		studentInfo();
+	}
+	
+	static void studentInfo() {
+
+	}
+	
+
+}
