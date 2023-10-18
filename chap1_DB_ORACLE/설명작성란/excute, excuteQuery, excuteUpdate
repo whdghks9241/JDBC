@@ -1,0 +1,13 @@
+excute, excuteQuery, excuteUpdate 메서드
+
+excute : 모든 종류의 SQL문을 실행할 수 있는 메서드
+		INSERT, UPDATE, DELETE, SLECT 등을 자동으로 인식하지 않음
+		값을 Boolean값으로 반환한다.
+			True는 ResultSet(테이터를 반환하는 Select문 에 대한 결과를 나타냄)
+			False는 업데이트 문(INSERT)또는 다른 유형의 sql문을 반환한다.
+			
+excuteQuery : 데이터를 조회하고 반환하기 위해 SQL SELECT 문을 실행하는데 주로 사용
+			  실행 결과를 나타내는 ResultSet 객체를 반환한다.
+			  
+excuteUpdate : 데이터베이스에서 영향을 미치는 SQL문(INSERT UPDATE DELET) 실행하는데 사용
+			   SQL문으로 인해 영향을 받은 행의 수를 반환, 데이터 변경 작업의 성공여부를 나타내는 정보

@@ -1,4 +1,4 @@
-package com.kh.oraclesample;
+package com.kh.oracledb.CRUD;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -7,17 +7,18 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class DBConnection {
+public class selectSample {
 	public static void main(String[] args) {
 //		SelectBank();
 //		SelectKHCAFE();
 //		SelectKHCAFENINFO();
 //		updateMenu();
-		insertBank();
+//		insertBank();
 //		SelectIf();
+//		insertKhcafe();
 	}
 	
-	static void SelectBank() {
+	static void SelectAll() {
 		// 1. 드라이버 연결 : Oracle JDBC 드라이버 클래스 이름
 		String driver = "oracle.jdbc.driver.OracleDriver";
 		// 2. 오라클 내 컴퓨터 연결 : 데이터베이스 연결 정보
@@ -95,7 +96,7 @@ public class DBConnection {
 		}
 	}
 	
-	static void SelectIf() {
+	static void SelectOne() {
 		// 1. 드라이버 연결 : Oracle JDBC 드라이버 클래스 이름
 				String driver = "oracle.jdbc.driver.OracleDriver";
 				// 2. 오라클 내 컴퓨터 연결 : 데이터베이스 연결 정보
@@ -196,37 +197,6 @@ public class DBConnection {
 		}
 	}
 
-	static void insertBank() {
-		String Driver = "oracle.jdbc.driver.OracleDrive";
-		String url = "jdbc:oracle:thin:@localhost:1521:xe";
-		String user = "khbank";
-		String password = "kh1234";
-		
-		Connection con = null;
-		
-		try {
-			con = DriverManager.getConnection(url, user, password);
-			
-			String insertQuery = "INSERT INTO BANK (account_id, account_number, account_name, balance, branch_name, last_transaction_date) values (?,?,?,?,?,?)";
-			
-			PreparedStatement insertState = con.prepareStatement(insertQuery);
-
-			insertState.setInt(1, 14);
-			insertState.setString(2, "2509182234181");
-			insertState.setString(3, "낭낭아");
-			insertState.setDouble(4, 900.00);
-			insertState.setString(5, "KH");
-			insertState.setDate(6, Date.valueOf("2023-10-26"));
-			
-			int rowsInsert = insertState.executeUpdate();
-			
-			System.out.println(rowsInsert + "row 추가됨");
-//			ResultSet result = insertState.executeQuery();
-			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-
+	
+	
 }

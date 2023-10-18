@@ -1,4 +1,4 @@
-package com.kh.oraclesample;
+package com.kh.oracledb.CRUD;
 
 import java.sql.Connection;
 import java.sql.Date;
