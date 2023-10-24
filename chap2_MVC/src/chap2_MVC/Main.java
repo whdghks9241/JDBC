@@ -8,7 +8,7 @@ public class Main {
 		cafeView view = new cafeView(model);
 		
 		cafeController controller = new cafeController(model, view);
-		
+		controller.run();
 //		view.addCafeName();
 //		view.updateMenu();
 //		view.updateCafes();
